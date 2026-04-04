@@ -1,10 +1,4 @@
-/**
- * @typedef { import("@prisma/client").Magento } Magento
- */
-
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { prisma } from '../lib/prisma.js'
 
 export async function getMagentoRecords() {
     return prisma.magento.findMany();
