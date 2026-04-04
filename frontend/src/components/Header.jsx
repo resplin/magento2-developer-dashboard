@@ -28,7 +28,7 @@ export default function Header() {
                                 <NavLink
                                     to="/run"
                                     className={({ isActive }) =>
-                                        isActive ? 'nav-link active' : 'nav-link'
+                                        isActive ? `nav-link active` : 'nav-link'
                                     }
                                 >Run</NavLink>
                             </li>
