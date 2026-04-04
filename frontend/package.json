@@ -32,6 +32,5 @@
         "globals": "^15.15.0",
         "sass": "^1.94.2",
         "vite": "^6.2.0"
-    },
-    "proxy": "http://localhost:5000"
+    }
 }
