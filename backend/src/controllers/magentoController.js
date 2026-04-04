@@ -22,7 +22,7 @@ export const getMagento = async (req, res) => {
     try {
         const magento = await getMagentoRecord(id)
         if (magento == null) {
-            res.status(404).json({ error: 'Magento not found' });
+            return res.status(404).json({ error: 'Magento not found' });
         }
         res.json(magento);
     } catch (err) {
