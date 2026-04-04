@@ -35,8 +35,7 @@ function App() {
     }
 
     const loadAll = async () => {
-        await loadCommands();
-        await loadMagentos();
+        await Promise.all([loadCommands(), loadMagentos()]);
     }
 
     useEffect(() => {
