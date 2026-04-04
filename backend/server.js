@@ -25,6 +25,6 @@ app.get("/", (req, res) => {
 try {
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 } catch (error) {
-    console.error('Unable to connect to the database:', error);
+    console.error('Unable to connect to the server:', error);
     process.exit(1);
 }
