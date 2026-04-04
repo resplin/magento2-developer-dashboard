@@ -32,7 +32,8 @@ export const createMagento = async (req, res) => {
         const magento = await createMagentoRecord(req.body);
         res.status(201).json(magento);
     } catch (err) {
-        if (err.name === 'SequelizeUniqueConstraintError') {
+        // Unique constraint violation
+        if (err.code === 'P2002') {
             res.status(409).json({ error: err });
         } else {
             res.status(500).json({ error: err });

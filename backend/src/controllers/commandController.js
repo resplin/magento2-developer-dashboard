@@ -32,7 +32,8 @@ export const createCommand = async (req, res) => {
         const command = await createCommandRecord(req.body);
         res.status(201).json(command);
     } catch (err) {
-        if (err.name === 'SequelizeUniqueConstraintError') {
+        // Unique constraint violation
+        if (err.code === 'P2002') {
             res.status(409).json({ error: err });
         } else {
             res.status(500).json({ error: err });
