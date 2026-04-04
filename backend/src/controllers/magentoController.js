@@ -17,7 +17,9 @@ export const getMagentos = async (req, res) => {
 
 export const getMagento = async (req, res) => {
     const id = Number(req.params.id);
-    if (isNaN(id)) throw new Error(`Non-numeric value: ${id}`);
+    if (isNaN(id)) {
+        return res.status(404).json({error: `Non-numeric value: ${id}`});
+    }
 
     try {
         const magento = await getMagentoRecord(id)
@@ -46,7 +48,9 @@ export const createMagento = async (req, res) => {
 
 export const updateMagento = async (req, res) => {
     const id = Number(req.params.id);
-    if (isNaN(id)) throw new Error(`Non-numeric value: ${id}`);
+    if (isNaN(id)) {
+        return res.status(404).json({error: `Non-numeric value: ${id}`});
+    }
 
     try {
         const magento = await updateMagentoRecord(id, req.body);
@@ -58,7 +62,9 @@ export const updateMagento = async (req, res) => {
 
 export const deleteMagento = async (req, res) => {
     const id = Number(req.params.id);
-    if (isNaN(id)) throw new Error(`Non-numeric value: ${id}`);
+    if (isNaN(id)) {
+        return res.status(404).json({error: `Non-numeric value: ${id}`});
+    }
 
     try {
         await deleteMagentoRecord(id);
